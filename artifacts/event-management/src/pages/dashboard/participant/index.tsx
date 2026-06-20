@@ -14,7 +14,7 @@ export default function ParticipantDashboard() {
   const { data, isLoading } = useGetMyRegistrations({ limit: 50 }, {
     query: { queryKey: getGetMyRegistrationsQueryKey({ limit: 50 }) }
   });
-  
+
   const { data: recommendations, isLoading: recommendationsLoading } = useGetEventRecommendations({
     query: { queryKey: getGetEventRecommendationsQueryKey() }
   });
@@ -98,8 +98,8 @@ export default function ParticipantDashboard() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {recommendationsLoading ? (
               <div className="col-span-full py-8 text-center text-muted-foreground">Loading recommendations...</div>
-            ) : recommendations?.events && recommendations.events.length > 0 ? (
-              recommendations.events.map((event) => (
+            ) : recommendations && recommendations.length > 0 ? (
+              recommendations.map((event) => (
                 <Card key={event.id} className="flex flex-col overflow-hidden">
                   {event.bannerUrl ? (
                     <div className="aspect-video w-full overflow-hidden">
