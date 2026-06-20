@@ -23,7 +23,7 @@ export default function PendingEvents() {
   const [selected, setSelected] = useState<Set<number>>(new Set());
   const [bulkPending, setBulkPending] = useState(false);
 
-  const events = data?.events ?? [];
+  const events = data ?? [];
   const allIds = events.map(e => e.id);
   const allSelected = allIds.length > 0 && allIds.every(id => selected.has(id));
   const someSelected = selected.size > 0;
