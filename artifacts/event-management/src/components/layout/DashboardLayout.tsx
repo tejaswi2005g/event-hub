@@ -18,6 +18,7 @@ export function DashboardLayout({ children }: { children: ReactNode }) {
   if (user?.role === "admin") {
     items = [
       { label: "Overview", href: "/dashboard/admin", icon: LayoutDashboard },
+      { label: "Create Event", href: "/dashboard/organizer/events/new", icon: PlusCircle },
       { label: "Users", href: "/dashboard/admin/users", icon: Users },
       { label: "All Events", href: "/dashboard/admin/events", icon: Calendar },
       { label: "Pending Approvals", href: "/dashboard/admin/events/pending", icon: CheckCircle },

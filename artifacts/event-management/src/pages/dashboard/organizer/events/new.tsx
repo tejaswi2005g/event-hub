@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { useToast } from "@/hooks/use-toast";
+import { useAuth } from "@/lib/auth";
 
 const CATEGORIES = [
   "Technology", "Business", "Music", "Sports", "Arts", 
@@ -29,6 +30,8 @@ export default function CreateEvent() {
   const createEventMutation = useCreateEvent();
   const [, setLocation] = useLocation();
   const { toast } = useToast();
+  const { user } = useAuth();
+  const returnPath = user?.role === "admin" ? "/dashboard/admin" : "/dashboard/organizer";
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -52,7 +55,7 @@ export default function CreateEvent() {
       {
         onSuccess: () => {
           toast({ title: "Event created successfully!" });
-          setLocation("/dashboard/organizer");
+          setLocation(returnPath);
         },
         onError: (err: any) => {
           toast({ title: "Failed to create event", description: err.message, variant: "destructive" });
@@ -132,7 +135,7 @@ export default function CreateEvent() {
               </div>
 
               <div className="pt-4 flex justify-end gap-2">
-                <Button type="button" variant="outline" onClick={() => setLocation("/dashboard/organizer")}>Cancel</Button>
+                <Button type="button" variant="outline" onClick={() => setLocation(returnPath)}>Cancel</Button>
                 <Button type="submit" disabled={createEventMutation.isPending}>
                   {createEventMutation.isPending ? "Creating..." : "Create Event"}
                 </Button>
