@@ -8,9 +8,9 @@ import { useQueryClient } from "@tanstack/react-query";
 import { format } from "date-fns";
 
 export default function AdminDashboard() {
-  const { data: stats } = useGetAdminStats({ query: { queryKey: getGetAdminStatsQueryKey() }});
-  const { data: pendingEvents } = useGetPendingEvents({ query: { queryKey: getGetPendingEventsQueryKey() }});
-  
+  const { data: stats } = useGetAdminStats({ query: { queryKey: getGetAdminStatsQueryKey() } });
+  const { data: pendingEvents } = useGetPendingEvents({ query: { queryKey: getGetPendingEventsQueryKey() } });
+
   const updateStatusMutation = useUpdateEventStatus();
   const queryClient = useQueryClient();
 
@@ -75,7 +75,7 @@ export default function AdminDashboard() {
             <CardTitle>Events Pending Approval</CardTitle>
           </CardHeader>
           <CardContent>
-            {pendingEvents?.events && pendingEvents.events.length > 0 ? (
+            {pendingEvents && pendingEvents.length > 0 ? (
               <Table>
                 <TableHeader>
                   <TableRow>
@@ -86,7 +86,7 @@ export default function AdminDashboard() {
                   </TableRow>
                 </TableHeader>
                 <TableBody>
-                  {pendingEvents.events.map(event => (
+                  {pendingEvents.map((event) => (
                     <TableRow key={event.id}>
                       <TableCell className="font-medium">{event.title}</TableCell>
                       <TableCell>{event.organizerName}</TableCell>
