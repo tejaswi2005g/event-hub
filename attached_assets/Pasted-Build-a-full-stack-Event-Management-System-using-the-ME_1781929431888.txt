@@ -1,0 +1,94 @@
+Build a full-stack Event Management System using the MERN stack (MongoDB, Express.js, React.js, Node.js).
+
+Requirements:
+
+1. Authentication & Authorization
+
+* Implement JWT-based authentication.
+* Support three roles: Admin, Organizer, Participant.
+* Secure protected routes using middleware.
+* Passwords must be hashed using bcrypt.
+
+2. User Features
+
+* User registration and login.
+* View upcoming events.
+* Search and filter events by category, date, and location.
+* Register for events.
+* View registered events in a personal dashboard.
+* Cancel event registration.
+
+3. Organizer Features
+
+* Create, edit, and delete events.
+* Upload event banner images.
+* Manage attendees.
+* View event analytics (registrations, attendance, capacity).
+
+4. Admin Features
+
+* Manage users.
+* Manage all events.
+* Approve or reject organizer-created events.
+* Dashboard with statistics:
+
+  * Total users
+  * Total events
+  * Active registrations
+  * Upcoming events
+
+5. Event Features
+
+* Event title
+* Description
+* Date & time
+* Venue
+* Category
+* Capacity limit
+* Registration deadline
+* Banner image
+* Event status (Upcoming, Ongoing, Completed)
+
+6. Backend Requirements
+
+* Node.js + Express.js REST API.
+* MongoDB database with optimized schema design.
+* Use Mongoose models and validation.
+* Implement pagination, filtering, and sorting.
+* Create indexes on frequently queried fields to improve performance.
+* Follow MVC architecture.
+* Proper error handling and validation.
+
+7. Frontend Requirements
+
+* React.js with modern responsive UI.
+* React Router.
+* Bootstrap or Tailwind CSS.
+* Dashboard for each role.
+* Loading indicators and toast notifications.
+* Mobile-friendly design.
+
+8. Additional Features
+
+* Email confirmation after registration.
+* QR code generation for event tickets.
+* Attendance tracking using QR code scanning.
+* Export attendee list to CSV.
+* Event recommendation section based on categories.
+
+9. Project Structure
+
+* Separate frontend and backend folders.
+* Clean folder architecture.
+* Environment variables for secrets.
+* README with setup instructions.
+
+10. Deliverables
+
+* Complete source code.
+* MongoDB schema design.
+* REST API documentation.
+* Sample seed data.
+* Deployment instructions for Replit.
+
+The application should be production-ready, follow software engineering best practices, and demonstrate skills in full-stack development, REST APIs, database optimization, authentication, and scalable architecture.
