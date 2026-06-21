@@ -1,36 +1,35 @@
-# Event Hub
+# EventHub - Event Management Platform
 
-A full-stack Event Management System built using the MERN stack.
+## Live Demo
+Frontend: https://event-hub-event-management.vercel.app
+
+Backend API: https://event-hub-1uxl.onrender.com
 
 ## Features
-
-- JWT Authentication
-- Role-Based Access Control
+- User Authentication (JWT)
+- Role-Based Access Control (Admin, Organizer, Participant)
+- Event Creation & Approval Workflow
 - Event Registration
-- Organizer Dashboard
 - Admin Dashboard
-- Event Analytics
-- QR Code Ticketing
-- MongoDB Database
+- Organizer Dashboard
+- Responsive UI
 
 ## Tech Stack
-
-### Frontend
+Frontend:
 - React
 - TypeScript
 - Tailwind CSS
+- Vite
 
-### Backend
+Backend:
 - Node.js
 - Express.js
+- TypeScript
 
-### Database
-- MongoDB
+Database:
+- PostgreSQL (Neon)
+- Drizzle ORM
 
-### Authentication
-- JWT
-- bcrypt
-
-## Author
-
-Tejaswi Gaddam
+Deployment:
+- Vercel
+- Render
