@@ -26,7 +26,7 @@ export default defineConfig({
       target: "generated",
       client: "react-query",
       mode: "split",
-      baseUrl: "/api",
+      baseUrl: import.meta.env.VITE_API_URL || "http://localhost:5000/api",
       clean: true,
       prettier: true,
       override: {
